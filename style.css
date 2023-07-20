@@ -1,0 +1,114 @@
+
+input{
+   
+    /* border:1px solid cadetblue; */
+    outline: none;
+}
+
+
+#output {
+   
+    display: grid;
+    background-color: rgba(243, 59, 59, 0.775);
+    grid-template-columns: repeat(5, 1fr);
+    /* background-image: url(images/cybersecurity-digital-information-technology-concept-polygon-binary-code-connected_371307-161.avif); */
+}
+.div{
+    /* background-color: rgba(0, 0, 0, 0.268); */
+    text-align: center;
+    /* padding: 25px; */
+    margin: 0 auto;
+    margin:  10px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 15px black;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.558);
+    height: 100%;
+    
+    margin: 0 auto;
+    padding: 50px;
+    z-index: 999 !important;
+}
+.container{
+    width: 700px;
+    margin: 0 auto;
+}
+.form{
+    width: 500px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(images/Imageifxu-1596799036123-1601633425902.avif);
+    
+}
+input{
+    padding: 5px 10px;
+    width: 95%;
+    margin: 10px 0px;
+    background-color: black;
+    color: white;
+}
+input::placeholder{
+    color: white ;
+}
+.img{
+    max-width: 100%;
+    height: 200px;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.update{
+    display: inline-block;
+    width: 95%;
+    background-color: rgba(243, 59, 59, 0.775);
+    padding: 10px 0px;
+    color: white;
+   border: none;
+   border-radius: 10px;
+   margin: 10px 10px;
+
+}
+.btn{
+    padding: 10px 25px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    
+   
+}
+p{
+    font-weight: 700;
+    font-size: 20px;
+}
+h3{
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+@media screen and (max-width:575px){
+    #output{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (min-width:575px) and (max-width:767px) {
+    #output{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width:767px) and (max-width:991px){
+    #output{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
