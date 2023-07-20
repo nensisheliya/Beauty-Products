@@ -39,5 +39,19 @@ const userdata = (e) => {
     localStorage.setItem("user", JSON.stringify(users));
     ui(users)
 }
-
 document.querySelector(".form").addEventListener("submit", userdata);
+//sorting byprice
+
+const handleth =() =>{
+    let data = products.sort((a,b)=> a.price - b.price);
+    ui(data);
+    console.log(data);
+}
+document.getElementById ("lth").addEventListener(("click",handleth));
+
+const handleth1 =() =>{
+    let data = products.sort((a,b)=> b.price - a.price);
+    ui(data);
+    console.log(data);
+}
+document.getElementById ("htl").addEventListener(("click",handleth1));
