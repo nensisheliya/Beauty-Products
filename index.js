@@ -1,18 +1,18 @@
 let users = JSON.parse(localStorage.getItem('user')) || [];
 
 
-const ui = () => {
+const output = (users) => {
     document.getElementById("output").innerHTML = ""
 
     let temp = ``
-    users.map((ele, index) => {
+    users.map((ele, user) => {
         temp += `
-        <div class="div">
+        <div>
         <img src=${ele.img} alt =""  class="img">
         <h3>Name : ${ele.name}</h3>
       
         <p> Price: ${ele.Number} $</P>
-        <button class="update"> Add to cart</button>
+        <button> Add to cart</button>
        
       
         </div>
@@ -20,11 +20,8 @@ const ui = () => {
     })
     document.getElementById("output").innerHTML = temp;
 }
-const userdelete = (id) => {
-    console.log(users);
-    users.splice(id, 1);
-    ui(users)
-}
+output(users)
+
 const userdata = (e) => {
     e.preventDefault();
     let user = {
@@ -35,23 +32,40 @@ const userdata = (e) => {
     };
    
     users.push(user);
-    console.log(users);
+    // console.log(users);
     localStorage.setItem("user", JSON.stringify(users));
-    ui(users)
+    output(users)
 }
-document.querySelector(".form").addEventListener("submit", userdata);
+document.querySelector("form").addEventListener("submit", userdata);
 //sorting byprice
 
-const handleth =() =>{
-    let data = products.sort((a,b)=> a.price - b.price);
-    ui(data);
+const handlelth =() =>{
+    let data = users.sort((a,b)=> a.number - b.number);
+   output(data);
     console.log(data);
 }
-document.getElementById ("lth").addEventListener(("click",handleth));
+document.getElementById ("lth").addEventListener("click",handlelth);
 
-const handleth1 =() =>{
-    let data = products.sort((a,b)=> b.price - a.price);
-    ui(data);
-    console.log(data);
+const handlehtl =() =>{
+    let data = users.sort((a,b)=> b.number - a.number);
+    output(data);
+    console.log(data); 
 }
-document.getElementById ("htl").addEventListener(("click",handleth1));
+document.getElementById ("htl").addEventListener("click",handlehtl);
+
+
+//search by name 
+const find =()=>{
+    let value = document.getElementById(value).value;
+    let data = Products.fillter ((val)=>val.title.include(value.tolowercase()));
+    console.log(data);
+
+    ul(data);
+
+}
+// document.getElementById("value").addEventListener("keypress"(e) =>{
+//     if(e.key=="enter"){
+//         find();
+//     }
+// });
+document.getElementById("search").addEventListener("click",find);
